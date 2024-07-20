@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cisco Type 7 Password Cracker</h1>
+        <form method="post">
+            <label for="encrypted_password">Enter Encrypted Password:</label>
+            <input type="text" id="encrypted_password" name="encrypted_password" required>
+            <button type="submit">Decrypt</button>
+        </form>
+        {% if decrypted_password %}
+        <div class="result">
+            <h2>Decrypted Password:</h2>
+            <p>{{ decrypted_password }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
